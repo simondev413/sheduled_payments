@@ -116,6 +116,49 @@ Content-Type: application/json
 }
 ```
 
+## Roadmap - Features Futuras
+
+As seguintes funcionalidades estão planejadas para versões futuras da API:
+
+### 🔐 Autenticação de Usuários
+- Implementar autenticação JWT (JSON Web Tokens) para proteger endpoints.
+- Suporte a login/logout com geração de tokens.
+- Refresh tokens para manter sessões ativas e seguras.
+- Autenticação multi-fator (MFA) para maior segurança.
+
+### 🔑 Verificação HMAC
+- Implementar validação de requisições via HMAC (Hash-based Message Authentication Code).
+- Garantir integridade e autenticidade das requisições.
+- Suporte a chaves HMAC por aplicação cliente.
+
+### 📋 Idempotência
+- Adicionar suporte a idempotência com chaves `Idempotency-Key` nas requisições.
+- Evitar duplicação de pagamentos em caso de retentativas acidentais.
+- Rastreamento de requisições idempotentes com armazenamento de resultados.
+
+### 📝 Sistema de Logs
+- Implementar logging detalhado de todas as operações.
+- Registro de erros, avisos e informações de auditoria.
+- Logs estruturados em formato JSON para melhor análise.
+- Integração com ferramentas de monitoramento (ELK Stack, Datadog, etc.).
+
+### 🔏 Header X-Signature
+- Adicionar validação de assinatura digital nas requisições via header `X-Signature`.
+- Utilizar algoritmos de criptografia assimétrica (RSA) para maior segurança.
+- Garantir que apenas clientes autorizados possam fazer requisições.
+
+### 🔄 Retry Inteligente
+- Implementar sistema de retry automático com backoff exponencial.
+- Configuração de tentativas máximas e intervalo entre retries.
+- Tratamento de erros transientes (timeout, indisponibilidade temporária).
+- Dead Letter Queue para pagamentos que falham permanentemente.
+
+### 🎯 Event Triggers
+- Sistema de eventos para disparar ações quando pagamentos mudam de status.
+- Webhooks para notificar sistemas externos sobre eventos de pagamento.
+- Suporte a múltiplos listeners de eventos.
+- Event streaming para processamento assíncrono de eventos.
+
 ## Contribuição
 
 1. Faça um fork do projeto.
